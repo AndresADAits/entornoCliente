@@ -1,5 +1,5 @@
 console.log("Mi primera funcion");
-a=11;
+a = 11;
 /* si hago esto
  const a=1;
  const a=2;
@@ -22,10 +22,10 @@ a=11;
  a=1; var a=1;
  a=2; var a=2;
  */
-function prueba(){
+function prueba() {
     console.log("Ejecutando funcion prueba");
     return a;
-    
+
     /*los ambitos suelen estar definidos por estar entre llaves {} excepto el principal
 
     
