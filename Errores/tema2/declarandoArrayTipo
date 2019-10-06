@@ -1,0 +1,12 @@
+function declararArrayTipo() {
+    /* Int8, Int16, Int32 porque son los bits que va a ocupar*/
+//El error lo tengo aqui abajo por declarar este array sin parentesis antes de los corchetes
+    //let listaEnteros = new Int32Array[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; 
+   // let listaEnteros = new Int32Array(10);
+   let listaEnteros = new Int32Array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+
+
+    return listaEnteros instanceof Int32Array
+        && listaEnteros.length === 10;
+
+}
