@@ -4,8 +4,10 @@
 
 function asignacionDeValoresSumar(){
 
-    let x = 0;
-    let y = 0;
+    let x = 2;
+    let y = 1;
+    x+=y;
+
 
     return x === 3;
 }
@@ -13,24 +15,27 @@ function asignacionDeValoresSumar(){
 
 function asignacionDeValoresRestar(){
 
-    let x = 0;
-    let y = 0;
+    let x = 10;
+    let y = 5;
+    x-=y;
 
     return x === 5;
 }
 
 function asignacionDeValoresMultiplicacion(){
 
-    let x = 0;
-    let y = 0;
+    var x = 6;
+    var y = 5;
+    x *= 5;
 
     return x === 35;
 }
 
 function asignacionDeValoresResto(){
 
-    let x = 0;
-    let y = 0;
+    let x = 5;
+    let y = 5;
+    x %= y;
 
     return x === 1;
 }
