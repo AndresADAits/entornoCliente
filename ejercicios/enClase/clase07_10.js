@@ -48,9 +48,28 @@ function comparaLista(lista1, lista2) {
         }
     }
     return vida1, vida2, empate;
-    console.log(`Wins de la lista1 = $vida1´);
+    /*    console.log(`Wins de la lista1 = $vida1´);
     console.log(`Wins de la lista2 = $vida2´);
-    console.log(`Empates = $empate´);
+    console.log(`Empates = $empate´); */
+
 }
 
-comparaLista([1,2,3,4,5],[5,4,3,2,1]);
+comparaLista([1, 2, 3, 4, 5], [5, 4, 3, 2, 1]);
+
+function concatenaLista(lista) {
+    let resultado = "";
+    let tamLista = lista.lenght;
+    
+    for (let i = 0; i < tamLista / 2; i++) {
+        if (i === ( tamLista -i -1 )) {
+            resultado += lista[i];
+        }else{
+            resultado += lista[i]
+            resultado += lista[tamLista - i - 1];
+        }
+        console.log("EL REUSLTADO DE CONCATENAR ES :"+resultado);
+        return resultado;
+    }
+}
+
+    concatenaLista(["a", "b"]); 
