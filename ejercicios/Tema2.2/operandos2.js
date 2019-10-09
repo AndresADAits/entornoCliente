@@ -6,8 +6,9 @@
 function concatenarCadenas(){
 
     let clase = 0;
-    let x = "";
-    let y = "";
+    let x = "ALUMNO_DAW";
+    let y = "_2017";
+    let resultado = x+y;
 
     return resultado === "ALUMNO_DAW_2017";
 }
@@ -16,6 +17,7 @@ function operadorTernario(){
 
     let x = 0;
     let y = 0;
+    let resultado =(x==y) ? true:false;
 
     return resultado;
 
@@ -24,16 +26,17 @@ function operadorTernario(){
 function deleteArray(){
 
     let array = [1,2,3,4,5,6,7,8,9,10];
+    delete array[9];
+
 
     return array[9] === undefined;
 
 }
 
 function crearArray(){
-
-    let x = [
-
-    ];
+    var object =new Object();
+    var date =new Date();
+    let x = [1.5,"ALUMNOS",date,1,object,undefined,null];
 
     return  x[0] ===  1.5
         && x[1] ===  "ALUMNOS"
@@ -47,7 +50,7 @@ function crearArray(){
 
 function existeElemento(){
 
-    let x = {};
+    let x = {prueba1:"prueba1",prueba2:"prueba2"};
 
     return "prueba1" in x && "prueba2" in x;
 

@@ -4,39 +4,36 @@
 
 function asignacionDeValoresSumar(){
 
-    let x = 2;
-    let y = 1;
-    x+=y;
+    let x = 0;
+    let y = 0;
+    x +=3;
 
-
-    return x === 3;
+    return x === 3
 }
 
 
 function asignacionDeValoresRestar(){
 
-    let x = 10;
-    let y = 5;
-    x-=y;
+    let x = 0;
+    let y = 0;
+    x -=-5;
 
     return x === 5;
 }
 
 function asignacionDeValoresMultiplicacion(){
 
-    var x = 6;
-    var y = 5;
-    x *= 5;
-
+    let x = 5;
+    let y = 0;
+    x *=7;
     return x === 35;
 }
 
 function asignacionDeValoresResto(){
 
-    let x = 5;
-    let y = 5;
-    x %= y;
-
+    let x = 3;
+    let y = 0;
+    x%=2;
     return x === 1;
 }
 
@@ -44,15 +41,15 @@ function comparacionIgualdad(){
 
     let x = undefined;
     let y = null;
-
+    let resultado = x==y;
     return resultado;
 }
 
 function comparacionIgualdadEstricto(){
 
     let x = undefined;
-    let y = null;
-
+    let y = undefined;
+    let resultado = x===y;
     return resultado;
 }
 
@@ -60,50 +57,58 @@ function compararcionMayorIgual(){
 
     let x = 0;
     let y = 0;
-
+    let resultado = x>=y;
     return resultado;
 }
 
 
 function incremento(){
 
-    let x = 0;
-
+    let x = 4;
+    x++;
     return x === 5;
 }
 
 
 function decremento(){
 
-    let x = 0;
-
+    let x = 6;
+    x--;
     return x === 5;
 }
 
 
 function igualdadIncremento(){
 
-    let x = 0;
+    let x = 5;
 
     return x++ === 5;
 }
 
 function comparacionAND(){
-    var x = "";
-    var y = "";
+    var x = "Andres";
+    var y = "Andres";
+    if(y && x ==="Andres"){
+         resultado = true;
+    }
 
     return resultado;
 }
 
 function comparacionOR(){
-    var x = "";
-    var y = "";
-
+    var x = "Jose";
+    var y = "Andres";
+    if(y || x ==="Jose"){
+        resultado = true;
+   }
     return resultado;
 }
 
 function comparacionNOT(){
-    var x = "";
+    var x = "Andres";
+    if(x !== "Jose"){
+        resultado=true;
+    }
 
     return resultado;
 }
