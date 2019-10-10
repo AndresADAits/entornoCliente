@@ -80,7 +80,7 @@ function decremento(){
 
 function igualdadIncremento(){
 
-    let x = 5;
+    let x = 4;
 
     return x++ === 5;
 }
@@ -88,8 +88,9 @@ function igualdadIncremento(){
 function comparacionAND(){
     var x = "Andres";
     var y = "Andres";
+    let resultado=true;
     if(y && x ==="Andres"){
-         resultado = true;
+        resultado = true;
     }
 
     return resultado;
@@ -98,16 +99,18 @@ function comparacionAND(){
 function comparacionOR(){
     var x = "Jose";
     var y = "Andres";
+    let resultado=true;
     if(y || x ==="Jose"){
-        resultado = true;
+         resultado = true;
    }
     return resultado;
 }
 
 function comparacionNOT(){
     var x = "Andres";
+    let resultado=true;
     if(x !== "Jose"){
-        resultado=true;
+     resultado=true;
     }
 
     return resultado;

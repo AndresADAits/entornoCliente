@@ -6,7 +6,7 @@
 //Devuelves 0 si a es igual b
 
 function quienEsMayor(a, b) {
-
+//return a.toString().localeCompare(b.toString());
     if (a > b) {
         return 1;
     } else if (a == b) {
@@ -17,22 +17,22 @@ function quienEsMayor(a, b) {
 }
 
 //Dado un array de elementos, devuelve la suma de todos aquellos que los elementos sean pares
-function sumarElementosPares(elemetos) {
+function sumarElementosPares(elementos) {
     let num = 0;
-    for (x = 0; x < elemetos.length; x++) {
-        if (elemetos[x] % 2 === 0) {
-            num = num + elemetos[x];
+    for (x = 0; x < elementos.length; x++) {
+        if (elementos[x] % 2 === 0) {
+            num += elementos[x];
         }
     }
     return num;
 }
 
 //Dado un array de elementos devuelve el valor mas grande de todos ellos.
-function escogerValorMasGrande(elemetos) {
-    let num_mayor = elemetos[0];
-    for (x = 0; x < elemetos.length; x++) {
-        if (elemetos[x] > num_mayor) {
-            num_mayor = elemetos[x];
+function escogerValorMasGrande(elementos) {
+    let num_mayor = elementos[0];
+    for (x = 0; x < elementos.length; x++) {
+        if (elementos[x] > num_mayor) {
+            num_mayor = elementos[x];
         }
     }
     return num_mayor;
@@ -42,7 +42,7 @@ function escogerValorMasGrande(elemetos) {
 function invertirUnaPalabra(String) {
     let invertida = "";
     for (x = 0; x <= String.length; x++) {
-        invertida = invertida + String.charAt(String.length - x)
+        invertida += String.charAt(String.length - x)
     }
     return invertida;
 }
