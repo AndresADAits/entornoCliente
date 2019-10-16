@@ -1,0 +1,19 @@
+{
+  "name": "ejemplos_de_clase",
+  "version": "1.0.0",
+  "description": "ejemplos de clase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndresADAits/entornoCliente.git"
+  },
+  "author": "JoseAFernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndresADAits/entornoCliente/issues"
+  },
+  "homepage": "https://github.com/AndresADAits/entornoCliente#readme"
+}
