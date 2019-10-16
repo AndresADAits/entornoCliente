@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AndresADAits/entornoCliente/issues"
   },
-  "homepage": "https://github.com/AndresADAits/entornoCliente#readme"
+  "homepage": "https://github.com/AndresADAits/entornoCliente#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1"
+  }
 }
