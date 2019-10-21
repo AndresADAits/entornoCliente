@@ -4,7 +4,12 @@
   "description": "ejemplos de clase",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "estilo":"npx eslint ./src/ ",
+    "fix-estilo": "npx eslint --fix ./src/ ",
+    "traducir": "npx babel src -d out",
+    "minimizar":"npx uglifyjs \"out/*\" --cm -o \"dest/archivo.min.js\"",
+    "build": "npm run fix-estilo && nmp run traducir && npm run minimizar"
+
   },
   "repository": {
     "type": "git",
@@ -17,6 +22,12 @@
   },
   "homepage": "https://github.com/AndresADAits/entornoCliente#readme",
   "devDependencies": {
-    "eslint": "^6.5.1"
-  }
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^6.5.1",
+    "jsdoc": "^3.6.3",
+    "uglify-js": "^3.6.3",
+    "uglifyjs": "^2.4.11"
+  },
+  "dependencies": {}
 }

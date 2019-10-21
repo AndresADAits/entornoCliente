@@ -7,7 +7,10 @@
 //Por ejemplo: obtenerNuevaFrase("Espero ir al cine a ver el joker","e") => "ver joker";
 //Por ejemplo: obtenerNuevaFrase("Todo depende de si el raton si acaba pronto con el queso","to") => "raton";
 function obtenerNuevaFrase(frase,trozoPalabra){
-    
+    let palabras="";
+    for(let i=0;i<frase.length;i++){
+        
+    }
 
 }
 
