@@ -44,7 +44,20 @@ function sumaDePosiciones(frase, trozoPalabra) {
 //     #123ABC o #123abc
 //     #BBB    o #333     
 function esValidoFormatoRGB(color) {
+    let ok = false;
+    let colorMin = color.toLowerCase();
+    let arrayPermitido = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
+    if ((colorMin.indexOf("#") === 0) && colorMin.length === (3||6)) {
 
+        for (let i = 1; i < colorMin.length; i++) {
+            if (colorMin[i].includes(arrayPermitido)) {
+                ok = true;
+            } else {
+                ok = false;
+            }
+        }
+    }
+    return ok;
 }
 
 //Función que valida una URL de una web .com y .es
@@ -60,7 +73,6 @@ function esValidaURL(url) {
     let ok = false;
     let lastY = url.lastIndexOf("&");
     let firsY = url.indexOf("&");
-    let corteUrl = url.split(".");
 
     if (url.includes((".com" || ".es") && ("http://www." || "https://www.") && ("?") && ("&"))) {
         if (lastY === firsY) {
@@ -69,7 +81,7 @@ function esValidaURL(url) {
             ok = false;
         }
     } else {
-            ok = false;
+        ok = false;
     }
     return ok;
 }
