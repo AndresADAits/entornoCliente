@@ -6,10 +6,10 @@
 
 //Por ejemplo: obtenerNuevaFrase("Espero ir al cine a ver el joker","e") => "ver joker";
 //Por ejemplo: obtenerNuevaFrase("Todo depende de si el raton si acaba pronto con el queso","to") => "raton";
-function obtenerNuevaFrase(frase,trozoPalabra){
-    let palabras="";
-    for(let i=0;i<frase.length;i++){
-        
+function obtenerNuevaFrase(frase, trozoPalabra) {
+    let palabras = "";
+    for (let i = 0; i < frase.length; i++) {
+
     }
 
 }
@@ -18,9 +18,26 @@ function obtenerNuevaFrase(frase,trozoPalabra){
 //En la que se encuentra una palabra en una frase.
 //Por ejemplo: sumaDePosiciones("Prueba de la rueda","ue") => 16
 //Por ejemplo: sumaDePosiciones("Aclaremos el ejercicio","acl") => 0
-function sumaDePosiciones(frase,trozoPalabra){
+function sumaDePosiciones(frase, trozoPalabra) {
+    let sumaPos = 0;
+ 
+        if (frase.includes(trozoPalabra)) {
+           
+/*
+ "canal".lastIndexOf("a")   // returns 3
+"canal".lastIndexOf("a",2) // returns 1
+"canal".lastIndexOf("a",0) // returns -1
+"canal".lastIndexOf("x")
+*/
+frase.lastIndexOf(trozoPalabra)+= sumaPos;
+          
+        } else {
+            console.log ("No esta incluido");
+        }
+        return sumaPos;
+    }
+    
 
-}
 
 //Función que valida el formato RGB de los colores
 //Formato RGB solo acepta letras de la A-F y a-f, 
@@ -28,7 +45,7 @@ function sumaDePosiciones(frase,trozoPalabra){
 //Los ejemplos de colores RGB son:
 //     #123ABC o #123abc
 //     #BBB    o #333     
-function esValidoFormatoRGB(color){
+function esValidoFormatoRGB(color) {
 
 }
 
@@ -41,6 +58,6 @@ function esValidoFormatoRGB(color){
 //Por ejemplo: http://www.prueba.es?ejemplo=1 =>no valido
 //Por ejemplo: http://www.prueba.es => No valido
 //Por ejemplo: https://www.prueba?hola=1&holita=2&holar=3 =>No valido
-function esValidaURL(color){
+function esValidaURL(color) {
 
 }
