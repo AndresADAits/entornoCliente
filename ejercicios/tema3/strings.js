@@ -19,7 +19,7 @@ function obtenerNuevaFrase(frase, trozoPalabra) {
 //Por ejemplo: sumaDePosiciones("Prueba de la rueda","ue") => 16
 //Por ejemplo: sumaDePosiciones("Aclaremos el ejercicio","acl") => 0
 function sumaDePosiciones(frase, trozoPalabra) {
-    let fraseMin= frase.toLowerCase()
+    let fraseMin = frase.toLowerCase()
     let sumaPos = 0;
     let largoRecortado = frase.length;
 
@@ -56,6 +56,20 @@ function esValidoFormatoRGB(color) {
 //Por ejemplo: http://www.prueba.es?ejemplo=1 =>no valido
 //Por ejemplo: http://www.prueba.es => No valido
 //Por ejemplo: https://www.prueba?hola=1&holita=2&holar=3 =>No valido
-function esValidaURL(color) {
+function esValidaURL(url) {
+    let ok = false;
+    let lastY = url.lastIndexOf("&");
+    let firsY = url.indexOf("&");
+    let corteUrl = url.split(".");
 
+    if (url.includes((".com" || ".es") && ("http://www." || "https://www.") && ("?") && ("&"))) {
+        if (lastY === firsY) {
+            ok = true;
+        } else {
+            ok = false;
+        }
+    } else {
+            ok = false;
+    }
+    return ok;
 }
