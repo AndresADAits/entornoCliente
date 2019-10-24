@@ -7,10 +7,31 @@
 //Por ejemplo: obtenerNuevaFrase("Espero ir al cine a ver el joker","e") => "ver joker";
 //Por ejemplo: obtenerNuevaFrase("Todo depende de si el raton si acaba pronto con el queso","to") => "raton";
 function obtenerNuevaFrase(frase, trozoPalabra) {
-    let palabras = "";
-    for (let i = 0; i < frase.length; i++) {
+    frase = frase.toLowerCase();
+    let nuevaFrase = "";
+    separador = " ", // un espacio en blanco
+        palabras = frase.split(separador);
 
+    for (let i = 0; i < palabras.length; i++) {
+        let trocito = palabras[i]
+
+
+        if ((palabras[i].includes(trozoPalabra)) === true) {
+
+            if ((palabras[i].indexOf(trozoPalabra) !== 0)) {
+                let letra = trocito.split("");
+                for (let j = 1; j < letra.length - 1; j++) {
+                    let palabraMenosUno = "";
+                    palabraMenosUno += letra[j];
+                    if (palabraMenosUno.includes(trozoPalabra)) {
+                        nuevaFrase += palabras[i] + " ";
+                    }
+                }
+            }
+        }
     }
+    return nuevaFrase.trim();
+
 
 }
 
@@ -47,10 +68,10 @@ function esValidoFormatoRGB(color) {
     let ok = false;
     let colorMin = color.toLowerCase();
     let arrayPermitido = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
-    if ((colorMin.indexOf("#") === 0) && colorMin.length === (3||6)) {
+    if ((colorMin.indexOf("#") === 0) && colorMin.length === (3 || 6)) {
 
         for (let i = 1; i < colorMin.length; i++) {
-            if (colorMin[i].includes(arrayPermitido)) {
+            if (colorMin[i].includes(arrayPermitido) === true) {
                 ok = true;
             } else {
                 ok = false;
