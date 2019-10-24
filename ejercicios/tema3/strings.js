@@ -19,24 +19,22 @@ function obtenerNuevaFrase(frase, trozoPalabra) {
 //Por ejemplo: sumaDePosiciones("Prueba de la rueda","ue") => 16
 //Por ejemplo: sumaDePosiciones("Aclaremos el ejercicio","acl") => 0
 function sumaDePosiciones(frase, trozoPalabra) {
+    let fraseMin= frase.toLowerCase()
     let sumaPos = 0;
- 
-        if (frase.includes(trozoPalabra)) {
-           
-/*
- "canal".lastIndexOf("a")   // returns 3
-"canal".lastIndexOf("a",2) // returns 1
-"canal".lastIndexOf("a",0) // returns -1
-"canal".lastIndexOf("x")
-*/
-frase.lastIndexOf(trozoPalabra)+= sumaPos;
-          
-        } else {
-            console.log ("No esta incluido");
-        }
-        return sumaPos;
+    let largoRecortado = frase.length;
+
+    if (fraseMin.includes(trozoPalabra)) {
+
+        sumaPos += fraseMin.lastIndexOf(trozoPalabra);
+
+        sumaPos += fraseMin.indexOf(trozoPalabra);
+
+    } else {
+        console.log("No esta incluido");
     }
-    
+    return sumaPos;
+}
+
 
 
 //Función que valida el formato RGB de los colores
