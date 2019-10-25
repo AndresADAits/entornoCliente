@@ -31,8 +31,6 @@ function obtenerNuevaFrase(frase, trozoPalabra) {
         }
     }
     return nuevaFrase.trim();
-
-
 }
 
 //Función que devuelve la suma de todas las posiciones
@@ -67,14 +65,14 @@ function sumaDePosiciones(frase, trozoPalabra) {
 function esValidoFormatoRGB(color) {
     let ok = false;
     let colorMin = color.toLowerCase();
-    let arrayPermitido = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"];
-    if ((colorMin.indexOf("#") === 0) && colorMin.length === (3 || 6)) {
+    let arrayPermitido = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "#"];
 
-        for (let i = 1; i < colorMin.length; i++) {
-            if (colorMin[i].includes(arrayPermitido) === true) {
+    if (colorMin.indexOf("#") === 0 && ((colorMin.length === 7) || (colorMin.length === 4))) {
+
+        for (let i = 0; i < arrayPermitido.length; i++) {
+
+            if (colorMin.includes(arrayPermitido[i])) {
                 ok = true;
-            } else {
-                ok = false;
             }
         }
     }
