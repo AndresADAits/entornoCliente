@@ -90,4 +90,18 @@ function esValidaPassword(password) {
 //números de una texto
 function eliminaCaracteresRaros(texto) {
 
+/**
+ *
+ * let terminator=/([^a-zA-Z0-9])/g;
+let loOtro=terminator.test(texto);
+
+if (loOtro){
+    return texto.replace(/[^a-zA-Z0-9]/g, "");
+}
+ */
+
+/**
+ * en una linea
+ */
+return /([^a-zA-Z0-9])/.test(texto) ?  texto.replace(/[^a-zA-Z0-9]/g, "") : texto
 }
