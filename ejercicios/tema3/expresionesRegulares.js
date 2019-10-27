@@ -19,71 +19,8 @@ function esValidaURL(url) {
 //Tiene que tener al menos una letra Mayúscula
 //Ayuda: Pueden usarse varias expresiones regulares para validar el password
 function esValidaPassword(password) {
-    /**
-     * let expBasica = /[0-9-A-Z-a-z]/;
-    let expChunga= /[Ñ,ñ,_,!,?,$]/;
-    let expDeprueba =/([0-9])?/;
-     */
-    let valideitor=false;
-    let caracter = "";
-    separador = "", 
-        caracter = password.split(separador);
-        console.log(caracter);
-    //let spain=/([Ñ,ñ]+)/;
-    let carac = /([!,?,$,_])?/;
-    let cuentCarac = 0;
-    let mayus = /([A-Z])?/;
-    let cuentMayus = 0;
-    let minusXtres = /([a-z]?)/;
-    let cuentMinusXtres = 0;
-    let numeroXcuatro=/([0-9])?/;
-    let cuentNumero=0;
-    let cuentaLavieja=0;
-
-
-    for (let i = 0; i < caracter.length; i++) {
-      //  console.log(caracter[i]);
-
-        if (carac.test(caracter[i])) {
-            cuentCarac++;
-            cuentaLavieja++;
-            console.log("TIENE UN CARACTER ESPECIAL");
-        } else {
-            console.log("NO ENCUENTRA CARACTER ESPECIAL");
-        }
-        if (mayus.test(caracter[i])) {
-            cuentMayus++;
-            cuentaLavieja++;
-            console.log("TIENE UNA LETRA MAYUSCULA");
-        } else {
-            console.log("NO ENCUENTRA MAYUSCULA");
-        }
-        if (minusXtres.test(caracter[i])) {
-            cuentMinusXtres++;
-            cuentaLavieja++;
-            console.log("TIENE 3 MINUSCULAS");
-        }
-        else {
-            console.log("NO ENCUENTRA MINUSCULA");
-        }
-        if (numeroXcuatro.test(caracter[i])) {
-            cuentNumero++;
-            cuentaLavieja++;
-            console.log("TIENE 4 NUMEROS");
-        }else{
-            console.log("No encuentra numeroS!");
-        } 
-    }
-    if (cuentaLavieja=9) {
-        valideitor=true;
-        
-    } 
-    /**if((cuentNumero===4)&&(cuentMinusXtres===3)&&(cuentMayus===1)&&(cuentCarac===1)){
-        console.log("hemos triunfado hermanos");
-        valideitor=true;
-
-    }  */
-  return valideitor;
+   
+return /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\!\?\-\$\_])[A-Za-z-0-9\!\?\-\$\_]{9,}/.test(password);
 }
 
 //Función que elimina todos los caracterés que no sean letras y
