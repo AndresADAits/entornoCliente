@@ -40,7 +40,7 @@ function esValidaPassword(password) {
     }
 
 
-    if ((cuentaNumeros === 4) && (cuentaLetras === 3)) {
+    if ((cuentaNumeros => 4) && (cuentaLetras => 3)) {
         return /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\!\?\-\$\_])[A-Za-z-0-9\!\?\-\$\_]{9,}/.test(password);
     } else {
         return false;
