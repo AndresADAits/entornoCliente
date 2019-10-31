@@ -19,33 +19,59 @@ function esValidaURL(url) {
 //Tiene que tener al menos una letra Mayúscula
 //Ayuda: Pueden usarse varias expresiones regulares para validar el password
 function esValidaPassword(password) {
-    let recorreCaracter = password.split("");
-    let cuentaNumeros = 0;
-    let cuentaLetras = 0;
-    for (let i = 0; i < recorreCaracter.length; i++) {
-        console.log(recorreCaracter[i] + " ");
-        if (/[0-9]/.test(recorreCaracter[i])) {
-            cuentaNumeros++;
-            console.log(cuentaNumeros);
-        } else {
-            //no pasa nada
-        }
-        //le podrias meter ñ? /[a-zñ]/
-        if (/[a-z]/.test(recorreCaracter[i])) {
-            cuentaLetras++;
-            console.log(cuentaLetras);
-        } else {
-            //no pasa nada
+    /** FORMA ANTERIOR
+       * let recorreCaracter = password.split("");
+      let cuentaNumeros = 0;
+      let cuentaLetras = 0;
+      for (let i = 0; i < recorreCaracter.length; i++) {
+          console.log(recorreCaracter[i] + " ");
+          if (/[0-9]/.test(recorreCaracter[i])) {
+              cuentaNumeros++;
+              console.log(cuentaNumeros);
+          } else {
+              //no pasa nada
+          }
+          //le podrias meter ñ? /[a-zñ]/
+          if (/[a-z]/.test(recorreCaracter[i])) {
+              cuentaLetras++;
+              console.log(cuentaLetras);
+          } else {
+              //no pasa nada
+          }
+      }
+  
+  
+      if ((cuentaNumeros => 4) && (cuentaLetras => 3)) {
+          return /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\!\?\-\$\_])[A-Za-z-0-9\!\?\-\$\_]{9,}/.test(password);
+      } else {
+          return false;
+      } */
+    /**
+     * FORMA MEJORADA
+     */
+    let alMenosCuatroNumeros = /(.*[0-9]+.*){4,}/g;
+    let alMenosCuatroLetras = /(.*[A-Za-z-Ñ-ñ]+.*){4,}/g;
+    let unCaraterEspecial = /([^\dA-Z-a-z-Ñ-ñ]+)/g;
+    let almenosUnaMayuscula = /(.*[A-Z-Ñ]+.*){1,}/;
+    var passOk=false;
+
+    if (password.length >= 9) {//longitud minima
+        console.log("  TIENE LONGITUD MINIMA");
+        if (alMenosCuatroNumeros.test(password)) {//tiene al menos 4 numeros
+            console.log(" TIENE AL MENOS 4 NUMEROS");
+            if (alMenosCuatroLetras.test(password)) {//tiene al menos 4 letras
+                console.log("   TIENE AL MENOS 4 LETRAS");
+                if (unCaraterEspecial.test(password)) {//tiene un caracter especial
+                    console.log("   TIENE ALGUN CARACTER ESPECIAL");
+                    if (almenosUnaMayuscula.test(password)) {
+                        console.log("   TIENE UNA MAYUSCULA POR LO MENOS");
+                        passOk=true;
+                        return passOk
+                    }       
+                }
+            }
         }
     }
-
-
-    if ((cuentaNumeros => 4) && (cuentaLetras => 3)) {
-        return /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\!\?\-\$\_])[A-Za-z-0-9\!\?\-\$\_]{9,}/.test(password);
-    } else {
-        return false;
-    }
-
 }
 
 //Función que elimina todos los caracterés que no sean letras y
