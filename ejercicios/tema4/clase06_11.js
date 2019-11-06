@@ -23,7 +23,7 @@ function creaDom(numero) {
             input.setAttribute("name", "div"+i+"_"+j);
             div.appendChild(input);
         }
-
-    }document.body.appendChild(div);
+        document.body.appendChild(div);
+    }
 
 }
