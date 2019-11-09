@@ -25,10 +25,15 @@ function existeAlgunaEspeciePerroConVidaPares() {
 // Dada una especie, sumar las vidas de todas los animales con
 // más de una palabra en su nombre y que sea de esa especie (2 puntos)
 // Esta función debe ejecutarse cada 10 segundos.
+   
+   function sumarVidas(especie) {
+      return listadoAnimales.filter(x => (x.especie === especie)).filter(x => x.nombre.includes(" ")).map(x => x.vida).reduce((acum, x) => acum + x);
+   }
+   let prueba="Perro";
+   let i = setInterval(sumarVidas(prueba),2000);
+   clearInterval(i);
 
-function sumarVidas(especie) {
-   return listadoAnimales.filter(x => (x.especie === especie)).filter(x => x.nombre.includes(" ")).map(x => x.vida).reduce((acum, x) => acum + x);
-}
+  
 //setInterval(sumarVidas(listadoAnimales.forEach(especie => especie.especie)),10000);
 //aqui me quedaria recorrer el array por la especie para que vaya usando la funcion cada 10s
 //podrias crear otra funcion que recorrar array en modo aux y luego meterla en el setInterval...
@@ -37,10 +42,32 @@ function sumarVidas(especie) {
 // Ordenados por nombre de forma descendente (2 puntos)
 // Esta función debe ejecutarse 10 segundos después de ejecutarse.
 
-function dameAnimales(especie, raza) {
-    listadoAnimales.filter(x => (x.especie === especie)).filter(x => (x.raza === raza)).sort().reverse();
+/*function dameAnimales(especie, raza) {
+   return listadoAnimales.filter(x => (x.especie === especie)).filter(x => (x.raza === raza)).sort().reverse();
+  
 }
-//setTimeout(console.log(dameAnimales,10000);
+ SEGUN ENCUENTRO EN LAS DIAPOSITIVAS DEBERIA SER ASÍ
+ * var executeDameAnimales= dameAnimales("Perro","caniche");
+ * setTimeout(executeDameAnimales,10000);
+ */
+let especie = "Perro";
+let raza = "caniche";
+function dameAnimales(especie, raza) {
+   return new Promise(resolve => {
+      setTimeout(() => {
+         resolve(listadoAnimales.filter(x => (x.especie === especie)).filter(x => (x.raza === raza)).sort().reverse());
+      }, 10000);
+   });
+}
+
+async function asyncCall() {
+   console.log('Llamando a funcion, espere 10 segundos');
+   var result = await dameAnimales(especie, raza);
+   console.log(result);
+
+}
+
+asyncCall();
 
 // Crear una funcíon, que añada un animal más a lista cumpliendo los siguientes requisitos: 
 // Nombre del animal con más vida de la lista
