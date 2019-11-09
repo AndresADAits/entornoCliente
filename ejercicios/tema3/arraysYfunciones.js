@@ -1,4 +1,6 @@
-let animal1 = {nombre:"Thor",especie:"Perro",raza:"caniche",vida:5};
+
+//let animal1 = {nombre:"Thor",especie:"Perro",raza:"caniche",vida:5};
+let animal1 = {nombre:"Thor",especie:"Gato",raza:"caniche",vida:5};
 let animal2 = {nombre:"Capitan America",especie:"Gato",raza:"siames",vida:8};
 let animal3 = {nombre:"Viuda Negra",especie:"Perro",raza:"bulldog",vida:15};
 let animal4 = {nombre:"Hulk",especie:"Perro",raza:"pastor aleman",vida:12};
@@ -14,6 +16,7 @@ let listadoAnimales = [animal1, animal2, animal3, animal4, animal5, animal6, ani
 // Dada la lista de animales, habría que implementar las siguientes funciones (2 puntos)
 
 function existeAlgunaEspeciePerroConVidaPares(){   
+   return console.log(listadoAnimales.filter(x => x.especie === "Perro" && x.vida %2 ===0));
 
 }
 
@@ -21,8 +24,10 @@ function existeAlgunaEspeciePerroConVidaPares(){
 // Dada una especie, sumar las vidas de todas los animales con
 // más de una palabra en su nombre y que sea de esa especie (2 puntos)
 // Esta función debe ejecutarse cada 10 segundos.
-
 function sumarVidas(especie){
+    
+       return listadoAnimales.filter(x=> (x.especie===especie)).reduce((sum,x)=>sum+x.vida);//&&(x.nombre.includes(" "))
+       //.map(x=>x.edad) lo anterior esta mal//.reduce((sum,x)=>sum+x);
 
 }
 
