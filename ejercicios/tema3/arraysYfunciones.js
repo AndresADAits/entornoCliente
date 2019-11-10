@@ -16,27 +16,29 @@ let listadoAnimales = [animal1, animal2, animal3, animal4, animal5, animal6, ani
 
 function existeAlgunaEspeciePerroConVidaPares() {
    return console.log(listadoAnimales.filter(x => x.especie === "Perro" && x.vida % 2 === 0));
-   function sumarEdades(total, num) {
-      return total + num;
-   }
 }
+
+
 
 
 // Dada una especie, sumar las vidas de todas los animales con
 // más de una palabra en su nombre y que sea de esa especie (2 puntos)
 // Esta función debe ejecutarse cada 10 segundos.
-   
-   function sumarVidas(especie) {
-      return listadoAnimales.filter(x => (x.especie === especie)).filter(x => x.nombre.includes(" ")).map(x => x.vida).reduce((acum, x) => acum + x);
-   }
-   let prueba="Perro";
-   let i = setInterval(sumarVidas(prueba),2000);
-   clearInterval(i);
 
-  
-//setInterval(sumarVidas(listadoAnimales.forEach(especie => especie.especie)),10000);
-//aqui me quedaria recorrer el array por la especie para que vaya usando la funcion cada 10s
-//podrias crear otra funcion que recorrar array en modo aux y luego meterla en el setInterval...
+/** function sumarVidas(especie) {
+    return listadoAnimales.filter(x => (x.especie === especie)).filter(x => x.nombre.includes(" ")).map(x => x.vida).reduce((acum, x) => acum + x);
+ }
+ */
+
+let sumarVidas = (especie) => alert(listadoAnimales.filter(x => (x.especie === especie)).filter(x => x.nombre.includes(" ")).map(x => x.vida).reduce((acum, x) => acum + x));
+
+setInterval(
+   function () {
+      sumarVidas("Perro");
+   }
+   , 10000);
+ 
+
 
 // Obtener una lista de todos los animales dada una especie y una raza
 // Ordenados por nombre de forma descendente (2 puntos)
@@ -44,13 +46,19 @@ function existeAlgunaEspeciePerroConVidaPares() {
 
 /*function dameAnimales(especie, raza) {
    return listadoAnimales.filter(x => (x.especie === especie)).filter(x => (x.raza === raza)).sort().reverse();
-  
 }
- SEGUN ENCUENTRO EN LAS DIAPOSITIVAS DEBERIA SER ASÍ
- * var executeDameAnimales= dameAnimales("Perro","caniche");
- * setTimeout(executeDameAnimales,10000);
  */
-let especie = "Perro";
+
+let dameAnimales = (especie, raza) => console.log(listadoAnimales.filter(x => (x.especie === especie)).filter(x => (x.raza === raza)).sort().reverse());
+
+setTimeout(
+   function () {
+      dameAnimales("Perro", "caniche");
+   }
+   , 10000); 
+
+/** OTRA OPCIÓN
+ * let especie = "Perro";
 let raza = "caniche";
 function dameAnimales(especie, raza) {
    return new Promise(resolve => {
@@ -68,6 +76,7 @@ async function asyncCall() {
 }
 
 asyncCall();
+ */
 
 // Crear una funcíon, que añada un animal más a lista cumpliendo los siguientes requisitos: 
 // Nombre del animal con más vida de la lista
@@ -76,6 +85,18 @@ asyncCall();
 // Vida es el número de la posición del primer animal con vida par 
 // 4 puntos
 
-function incluirAnimal() {
 
+function incluirAnimal(){
+   let vida = listadoAnimales.findIndex(x => x.vida % 2 === 0);
+   listadoAnimales.sort((a, b) => b.vida - a.vida);
+   let nombre = listadoAnimales[0].nombre;
+   listadoAnimales.sort((a, b) => a.especie.length - b.especie.length);
+   let especie = listadoAnimales[0].especie;
+   listadoAnimales.sort((a, b) => a.nombre - b.nombre);
+   let raza = listadoAnimales[0].raza;
+
+   let animalNuevo = {nombre, especie, raza, vida};
+   listadoAnimales.push(animalNuevo);
+   console.log("Nueva lista de animales, con nuevo animal añadido");
+   console.log(listadoAnimales)
 }
