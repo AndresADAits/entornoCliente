@@ -17,15 +17,16 @@ function obtenerNuevaFrase(frase, trozoPalabra) {
 
 
         if ((palabras[i].includes(trozoPalabra)) === true) {
+            if (palabras[i].startsWith(trozoPalabra)) {
 
-            if ((palabras[i].indexOf(trozoPalabra) !== 0)) {
-                let letra = trocito.split("");
-                for (let j = 1; j < letra.length - 1; j++) {
-                    let palabraMenosUno = "";
-                    palabraMenosUno += letra[j];
-                    if (palabraMenosUno.includes(trozoPalabra)) {
-                        nuevaFrase += palabras[i] + " ";
-                    }
+
+            } else {
+                if (palabras[i].endsWith(trozoPalabra)) {
+
+                } else {
+
+                    nuevaFrase += palabras[i] + " ";
+            
                 }
             }
         }
@@ -90,17 +91,15 @@ function esValidoFormatoRGB(color) {
 //Por ejemplo: https://www.prueba?hola=1&holita=2&holar=3 =>No valido
 function esValidaURL(url) {
     let ok = false;
-    let lastY = url.lastIndexOf("&");
-    let firsY = url.indexOf("&");
-
-    if (url.includes((".com" || ".es") && ("http://www." || "https://www.") && ("?") && ("&"))) {
-        if (lastY === firsY) {
-            ok = true;
-        } else {
-            ok = false;
+    arrayUrl = url.split(".");
+    if (arrayUrl.length > 2) {
+        if (url.startsWith("http://www.") || url.startsWith("https://www.")) {
+            if (arrayUrl[2].startsWith("com") || arrayUrl[2].startsWith("es")) {
+                if (arrayUrl[2].includes("&") === true) {
+                    resultado = true;
+                }
+            }
         }
-    } else {
-        ok = false;
     }
     return ok;
 }
