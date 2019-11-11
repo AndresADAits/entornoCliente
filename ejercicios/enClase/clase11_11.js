@@ -25,3 +25,31 @@ document.body.appendChild(div);
 div.appendChild(h1);
     }
 }
+
+/*
+*AHORA VAMOS HACER LO MISMO QUE ARRIBA PERO CON CLASES PARA UN CSS, Y DEBEMOS HACERLOS CON 
+* UN DIV PAR Y UN DIV IMPAR 
+*/
+
+
+function creaCss(numero){
+    for (let i = 1; i <= numero; i++) {//esto lo hago para luego no poner +1 en linea 11 y que me cuadre lo de par impar por color
+
+        let div = document.createElement("div");
+        let tamano = 100 * i;
+        let h1=document.createElement("h1");
+        h1.innerHTML=`DIV${i}`;
+        div.style.width = `${tamano}px`;
+        div.style.height = `${tamano}px`;
+
+        if(i%2===0){
+div.classList.add("divPar")// esto lo puedes ver en el git de jorge
+
+        }else{
+            div.style.backgroundColor='green';
+        }
+div.style.border='1px solid black';
+document.body.appendChild(div);
+div.appendChild(h1);
+    }
+}
