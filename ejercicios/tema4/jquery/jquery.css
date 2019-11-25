@@ -1,10 +1,40 @@
-.inputPar{
+.amarillo{
+    background-color: yellow;
+}
+
+.azul{
+    background-color: blue;
+}
+
+.error{
+    background-color: red;
+}
+
+.correcto{
     background-color: green;
-    color: indigo;
-    
+}
+
+.cuadrado{
+    width:200px;
+    height: 200px;
+}
+
+.campo{
+    width:50%;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+
+.inputPar{
+    background-color:blue;
+    color:white;
 }
 
 .inputImpar{
-    background-color: blue;
-    color: yellow;
+    background-color:green;
+    color:orange;
+}
+
+.divOculto{
+    visibility: hidden;
 }
