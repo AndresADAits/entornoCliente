@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="es_ES">
+    <meta charset="UTF-8">
+    <title>EJEMPLO DOM</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="repaso.js" cache="false"></script>
+</head>
+<body>
+    <h1>VALIDACION CON JQUERY</h1>
+    
+
+    <div class="cuadroEjercicios">
+    <h2>PROYECTO</h2>
+    <div>
+        <h3>FORMULARIO PARA AÑADIR USUARIOS A LA LISTA.</h3>
+        <form id="formularioCrearProyecto" action="prueba.php" method="POST">
+            <div>
+                <div>SOLO MAYÚSCULAS, MAS DE TRES LETRAS Y UN NUMERO MINIMO</div>
+                <label for="nombre">NOMBRE</label>
+                <input id="nombre"/>
+                <div id="erroresNombre" class="error">
+                    
+                </div>
+            </div>
+            <div>
+                <div>SOLO NUMERO, Y MAYOR DE 2</div>
+                <label for="tiempo">TIEMPO</label>
+                <input id="tiempo" type="number"/>
+                <div id="erroresTiempo" class="error">
+                    
+                </div>
+            </div>
+            <div>
+                <div>NO PUEDE ESTAR SELECCIONADO NINGUNO, EL TIPO DESARROLLO NO PUEDE TENER TIEMPO MENOS DE 5</div>
+                    <label for="tipo">TIPO</label>
+                    <select id="tipo">
+                            <option value="ninguno">NINGUNO</option>
+                        <option value="redes">REDES</option>
+                        <option value="desarrollo">DESARROLLO</option>
+                        <option value="analisis">ANALISIS</option>
+                        <option value="refactor">REFACTOR</option>
+                    </select>
+                    <div id="erroresTipo" class="error">
+                </div>
+            </div>
+            <div>
+                <div>DEBE MARCARSE UNO</div>
+                <label for="beneficios">BENEFICIOS</label><br>
+                <input id="beneficios" type="radio" name="check" value="corto_plazo">CortoPlazo<br>
+                <input id="beneficios" type="radio" name="check" value="largo_plazo">LargoPlazo<br>
+                <div id="erroresBeneficios" class="error">
+                        
+                </div>
+            </div>
+            <div>
+                <div>DEBE MARCARSE AL MENOS UNO</div>
+                <label for="personal">PERSONAL</label><br>
+                <input id="personal" type="checkbox" name="check" value="programador">Programador<br>
+                <input id="personal" type="checkbox" name="check" value="analista">Analista<br>
+                <input id="personal" type="checkbox" name="check" value="jefe_proyecto">Jefe de Proyecto<br>
+                <div id="erroresPersonal" class="error">
+                        
+                </div>
+            </div>
+           
+           
+            <input type="submit" value="Crear Proyecto"></button>
+        </form>
+        <div id="proyectoCreado">
+            <h1>PROYECTO CREADO</h1>
+            <div id="nombreProyecto"></div>
+            <div id="tiempoProyecto"></div>
+            <div id="beneficiosProyecto"></div>
+            <div id="personalMarcado"></div>
+        </div>
+    </div>
+   
+    
+  
+ 
+</body>
+</html>
