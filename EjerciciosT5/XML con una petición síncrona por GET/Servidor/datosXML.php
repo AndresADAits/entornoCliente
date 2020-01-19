@@ -5,7 +5,8 @@ $username = "root";
 $password = "";
 $database = "usuariostiendademoviles";
 $conn = mysqli_connect ($servername, $username, $password, $database);
-// Cabecera para indicar que vamos a enviar datos JSON y que no haga caché de los datos.
+
+
 header('Content-Type: text/xml');
 header('Cache-Control: no-cache, must-revalidate');
 
