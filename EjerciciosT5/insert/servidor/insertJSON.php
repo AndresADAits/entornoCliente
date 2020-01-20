@@ -13,11 +13,11 @@ $marca = $_POST["marca"];
 $modelo = $_POST["modelo"];
 $precio = $_POST["precio"];
 $bateria = $_POST["bateria"];
-$oferta = $_POST["oferta"];
 
 
 
-$sql = "INSERT INTO stock (marca,modelo,precio,bateria,oferta) VALUES ('$marca','$modelo','$precio','$bateria','$oferta');";
+
+$sql = "INSERT INTO stock (marca,modelo,precio,bateria) VALUES ('$marca','$modelo','$precio','$bateria')";
 
 
 if (mysqli_query($conn, $sql)) {

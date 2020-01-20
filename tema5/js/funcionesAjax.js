@@ -4,17 +4,18 @@ document.addEventListener("DOMContentLoaded",function(){
         event.preventDefault();
         realizarPeticionAsincronaMYSQL();
     });
+    let busquedaAjaxMYSQL = document.getElementById("FormularioBusqueda");
+    busquedaAjaxMYSQL = document.getElementById("FormularioBusqueda");
+    busquedaAjaxMYSQL.addEventListener("submit",function(event){
+        event.preventDefault();
+        busqueda();
+    });
+
 
     let formularioAjaxPDO = document.getElementById("formularioPDO");
     formularioAjaxPDO.addEventListener("submit",function(event){
         event.preventDefault();
         realizarPeticionAsincronaPDO();
-    });
-
-    let formularioCrear = document.getElementById("formularioCrear");
-    formularioCrear.addEventListener("submit",function(event){
-        event.preventDefault();
-        hacerInsert();
     });
 })
 
@@ -58,6 +59,11 @@ function realizarPeticionAsincronaMYSQL(){
     miXHR.send(null);
 }
 
+function busqueda(){
+    let nombreAbuscar= document.getElementById("")
+    nombreAbuscar.innerHTML="";
+    
+}
 function realizarPeticionAsincronaPDO(){
     let divResultado =  document.getElementById("resultado");
     divResultado.innerHTML = "";
@@ -85,14 +91,13 @@ function crearTablaJSON(respuesta){
     let divResultado =  document.getElementById("resultado");
     divResultado.innerHTML = "";
     var resultados= JSON.parse(respuesta);
-    //<th>DIRECTOR</th><th>DURACION</th>
-    let salida="<table border='1'><tr><th>MARCA</th><th>MODELO</th><th>BATERIA</th>";
+    let salida="<table border='1'><tr><th>NOMBRE</th><th>GENERO</th><th>DIRECTOR</th><th>DURACION</th></tr>";
 
     for (let i=0; i < resultados.length; i++){
         let objeto = resultados[i];
-        salida+="<tr><td>"+objeto.marca+"</td><td>"+
-        objeto.modelo+"</td><td>"+objeto.bateria+"</td><td>";
-
+        salida+="<tr><td>"+objeto.nombre+"</td><td>"+
+        objeto.genero+"</td><td>"+objeto.director+"</td><td>"+
+        objeto.duracion +"</td></tr>";
     }
 
     salida+="</table>";
@@ -101,28 +106,6 @@ function crearTablaJSON(respuesta){
 
 }
 
-function hacerInsert(){
-    let divResultado =  document.getElementById("resultado");
-    divResultado.innerHTML = "";
 
-    let nombre = document.getElementById("marca").value;
-    let modelo = document.getElementById("modelo").value;
-    let precio = document.getElementById("precio").value;
-    let bateria = document.getElementById("bateria").value;
-  
-   
-    document.getElementById("spinner").style ="display:block";
-    
-    miXHR = new objetoXHR();
-    /*miXHR.open("GET", "servidor/datosBusqueda.php?nombre="+nombre, true);
-    miXHR.onreadystatechange = comprobarEstadoPeticion;
-    miXHR.send(null);*/
-
-    miXHR.open("POST", "servidor/insert.php", true);
-    let datos = "nombre="+nombre+"&modelo="+modelo+"&precio="+precio+"&bateria="+bateria;
-    miXHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    miXHR.onreadystatechange = comprobarEstadoPeticion;
-    miXHR.send(datos);
-}
 
 

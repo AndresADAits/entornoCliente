@@ -8,11 +8,16 @@ $usuario = "root";
 $password = "";
 $baseDatos = "usuariostiendademoviles";
 
+$marca = $_POST["marca"];
+$modelo = $_POST["modelo"];
+$precio = $_POST["precio"];
+$bateria = $_POST["bateria"];
+
+
 $conn = new PDO("mysql:host=$servidor;dbname=$baseDatos", $usuario, $password);
 $conn->exec("set names utf8");
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $conn->prepare("SELECT marca,modelo,bateria,oferta FROM stock WHERE marca LIKE '%".$_POST['nombre']."%'AND bateria LIKE '%".$_POST['bateria']."%'AND oferta LIKE '%".$_POST['oferta']."%'");
+$stmt = $conn->prepare("INSERT INTO stock (marca,modelo,precio,bateria) VALUES ('$marca','$modelo','$precio','$bateria')");
 $stmt->execute();
-$peliculas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($peliculas);
+
 ?>

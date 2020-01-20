@@ -4,15 +4,14 @@ header('Content-Type: application/json;  charset=utf-8');
 header('Cache-Control: no-cache, must-revalidate');
 
 $servidor = "localhost";
-$usuario = "prueba";
-$password = "password";
-$baseDatos = "adaits";
+$usuario = "root";
+$password = "";
+$baseDatos = "usuariostiendademoviles";
 
 $conn = new PDO("mysql:host=$servidor;dbname=$baseDatos", $usuario, $password);
 $conn->exec("set names utf8");
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $conn->prepare("SELECT nombre,genero,director,duracion FROM peliculas");
+$stmt = $conn->prepare("INSERT INTO stock (marca,modelo,precio,bateria) VALUES ('$marca','$modelo','$precio','$bateria')");
 $stmt->execute();
-$peliculas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo json_encode($peliculas);
+
 ?>
