@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Ejemplo Ajax</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <script src="ejemplo4.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <h1>EJEMPLO DE VALIDACIÓN</h1>
+        <div>
+            <form id="formulario" action="http:://www.google.es" method="POST">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input id="nombre" name="nombre" value="" type="text" />
+                    <div class="divErrores">
+
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input id="apellido" name="apellido" value="" type="text" />
+                    <div class="divErrores">
+
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <label for="edad">Edad:</label>
+                    <input id="edad" name="edad" value="" type="number" />
+                    <div class="divErrores">
+
+                    </div>
+                </div>
+                <br>
+                <div>
+
+                    <label for="profesion">Edad:</label>
+                    <select name="profesion" id="profesion">
+                        <option value="" selected></option>
+                        <option value="novato">Novato</option>
+                        <option value="profesional">Profesional</option>
+                        <option value="putoAmo">Puto Amo</option>
+                    </select>
+
+                    <div class="divErrores">
+                    </div>
+                </div>
+                <br>
+                <div><label for="terminos">Aceptar los terminos</label>
+                    <input type="checkbox" name="terminos" id="terminos">
+                    <div class="divErrores">
+                    </div>
+                </div>
+                <br>
+                <button id="boton">BOTON DE ENVIO</button>
+            </form>
+        </div>
+        <div>
+            <div id="spinner" class="spinner">
+                <div class="dot1"></div>
+                <div class="dot2"></div>
+            </div>
+            <h1>Resultados:</h1>
+            <div id="resultado"></div>
+        </div>
+    </div>
+</body>
+
+</html>
